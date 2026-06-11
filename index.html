@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceskaz Deli Cafe | Aureate Heritage</title>
+  <meta name="description"
+    content="Welcome to Ceskaz Deli Cafe, a premium culinary heritage experience. Enjoy artisanal coffee and fine dining in a warm, minimalist space.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#735b2e',
+            'on-primary': '#ffffff',
+            'primary-container': '#cdae7a',
+            'on-primary-container': '#574117',
+            background: '#f9f9f9',
+            'on-background': '#1a1c1c',
+            surface: '#ffffff',
+            'surface-dim': '#dadada',
+            'surface-container': '#eeeeee',
+            'surface-container-high': '#e8e8e8',
+            outline: '#7f7669',
+            'outline-variant': '#d0c5b6',
+          },
+          fontFamily: {
+            serif: ['"Libre Caslon Text"', 'serif'],
+            sans: ['"Hanken Grotesk"', 'sans-serif'],
+            handwritten: ['"Caveat"', 'cursive'],
+          },
+          letterSpacing: {
+            caps: '0.1em',
+            display: '-0.02em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Premium style additions */
+    .label-caps {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .display-lg {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .display-lg-mobile {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    /* Custom video overlay gradient for mobile to ensure text readability */
+    .video-overlay {
+      background: linear-gradient(to bottom, rgba(26, 28, 28, 0.4) 0%, rgba(26, 28, 28, 0.2) 60%, rgba(26, 28, 28, 0.6) 100%);
+    }
+
+    /* Transition styles */
+    .fade-out {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Custom Scrollbar for premium feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f9f9f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #735b2e;
+      border: 2px solid #f9f9f9;
+    }
+
+    /* Cute anime face animations */
+    @keyframes sweat-drip {
+      0% {
+        transform: translateY(-4px);
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      80% {
+        transform: translateY(8px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(-4px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes shy-float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-4px) rotate(1deg);
+      }
+    }
+
+    .animate-sweat {
+      animation: sweat-drip 2.2s infinite ease-in-out;
+      transform-origin: top right;
+    }
+
+    .animate-shy-face {
+      animation: shy-float 3.5s infinite ease-in-out;
+    }
+
+    @keyframes shy-left-arm {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(1.5px);
+      }
+    }
+
+    @keyframes shy-right-arm {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(-1.5px);
+      }
+    }
+
+    .animate-shy-left {
+      animation: shy-left-arm 0.8s infinite ease-in-out;
+    }
+
+    .animate-shy-right {
+      animation: shy-right-arm 0.8s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-sans h-full overflow-hidden" id="body-container">
+
+  <!-- Splash / Enter Experience Overlay (Frosted Glass - Natural layout) -->
+  <div id="splash-overlay"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/85 backdrop-blur-[16px] text-on-background transition-opacity duration-1000 border-b border-outline-variant/30">
+    <div class="text-center px-6 max-w-xl">
+      <h2 class="label-caps text-primary tracking-[0.2em] mb-4">Ceskaz Deli Cafe</h2>
+      <h1 class="font-serif text-4xl md:text-5xl text-on-background mb-8 tracking-wide leading-tight">Welcome to our
+        website</h1>
+      <p class="font-sans text-sm md:text-base text-on-background/70 mb-12 max-w-md mx-auto leading-relaxed">
+        Thanks for visiting
+      </p>
+      <button id="enter-btn"
+        class="bg-primary text-white label-caps px-8 py-4 tracking-[0.15em] border border-primary hover:bg-[#5f4923] hover:border-[#5f4923] transition-colors duration-300 rounded-none w-full sm:w-auto">
+        Click here to close this
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 border-b border-transparent">
+    <div class="max-w-[1280px] mx-auto px-5 md:px-[64px] h-24 flex items-center">
+
+      <!-- Split navigation container for desktop to align perfectly with the 50/50 hero split -->
+      <div class="w-full flex items-center justify-between">
+
+        <!-- Left Side: Logo & Main Navigation (Over off-white on desktop, white text on mobile) -->
+        <div class="flex items-center space-x-12 md:w-1/2">
+          <a href="#"
+            class="font-sans text-lg font-bold tracking-[0.25em] text-white md:text-on-background transition-colors duration-300"
+            id="nav-logo">
+            CESKAZ
+          </a>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#gallery"
+              class="label-caps text-on-background/80 hover:text-on-background hover:border-b hover:border-primary transition-all duration-200 pb-1">Gallery</a>
+            <a href="#menu"
+              class="label-caps text-on-background/80 hover:text-on-background hover:border-b hover:border-primary transition-all duration-200 pb-1">Menu</a>
+            <a href="#visit"
+              class="label-caps text-on-background/80 hover:text-on-background hover:border-b hover:border-primary transition-all duration-200 pb-1">Visit</a>
+          </nav>
+        </div>
+
+        <!-- Right Side: CTA Action (Over video on desktop, white text on mobile) -->
+        <div class="flex items-center justify-end space-x-6 md:w-1/2">
+          <a href="#book"
+            class="inline-block border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 px-6 py-2.5 label-caps rounded-none text-xs md:text-sm"
+            id="nav-action">
+            Book a Table
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Container -->
+  <main class="relative h-auto md:h-screen w-full md:overflow-hidden bg-background">
+
+    <!-- Mobile Hero Layout (< md) - Stacked Video + Content -->
+    <div id="mobile-hero" class="block md:hidden bg-background">
+
+      <!-- Video Section (Top half) -->
+      <div class="relative w-full h-screen bg-black">
+        <video id="mobile-video" class="w-full h-full object-cover" autoplay loop muted playsinline>
+          <source src="cafe.mp4" type="video/mp4">
+        </video>
+        <!-- Subtle dark overlay -->
+        <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+      </div>
+
+      <!-- Content Section (Bottom half - normal flow on off-white background) -->
+      <div class="px-5 py-8 bg-background border-t border-outline-variant/30">
+        <h1 class="text-on-background font-serif text-3xl mb-3 leading-tight">
+          Food that touches your soul.<br>A place, your door to happiness.
+        </h1>
+
+        <div class="flex items-center gap-2 mb-4">
+          <span class="font-sans font-bold text-lg text-primary">4.9</span>
+          <div class="flex text-primary text-sm">
+            ★★★★★
+          </div>
+          <span class="text-on-background/60 font-sans text-sm ml-1">(1200+ reviews)</span>
+        </div>
+
+        <!-- Reviews Slideshow (Mobile) -->
+        <div class="relative overflow-hidden mb-6 h-36 max-w-sm">
+          <!-- Slide 1 -->
+          <div
+            class="review-slide-mobile absolute inset-0 flex items-start gap-3 transition-all duration-700 ease-in-out opacity-100 transform translate-x-0">
+            <img src="avatar_john.png" alt="John D."
+              class="w-12 h-12 rounded-full object-cover border border-outline/20 flex-shrink-0">
+            <div class="flex-grow">
+              <p class="text-on-background/85 font-sans text-sm italic leading-relaxed">"The hazelnut cappuccino was
+                absolutely perfect, and the katsu chicken bao is incredibly flavorful. Truly a gem of a cafe!"</p>
+              <h4 class="label-caps text-primary text-xs mt-1">— John D., Local Guide</h4>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div
+            class="review-slide-mobile absolute inset-0 flex items-start gap-3 transition-all duration-700 ease-in-out opacity-0 transform translate-x-8 pointer-events-none">
+            <img src="avatar_sarah.png" alt="Sarah M."
+              class="w-12 h-12 rounded-full object-cover border border-outline/20 flex-shrink-0">
+            <div class="flex-grow">
+              <p class="text-on-background/85 font-sans text-sm italic leading-relaxed">"Such a cozy and quaint
+                atmosphere! I love coming here to unwind. Their cream of mushroom soup is the best I've ever had."</p>
+              <h4 class="label-caps text-primary text-xs mt-1">— Sarah M., Customer</h4>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div
+            class="review-slide-mobile absolute inset-0 flex items-start gap-3 transition-all duration-700 ease-in-out opacity-0 transform translate-x-8 pointer-events-none">
+            <img src="avatar_david.png" alt="David K."
+              class="w-12 h-12 rounded-full object-cover border border-outline/20 flex-shrink-0">
+            <div class="flex-grow">
+              <p class="text-on-background/85 font-sans text-sm italic leading-relaxed">"Friendly staff, excellent
+                service, and the roasted chicken sub is delicious. Highly recommend visiting Ceskaz Deli Cafe."</p>
+              <h4 class="label-caps text-primary text-xs mt-1">— David K., Food Blogger</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 w-full">
+          <a href="#menu"
+            class="bg-primary hover:bg-[#5f4923] text-white label-caps px-8 py-4 tracking-wider transition-all duration-300 rounded-none border border-primary text-xs w-full sm:w-1/2 text-center">
+            Explore Menu
+          </a>
+          <a href="#visit"
+            class="border border-primary text-primary hover:bg-primary/10 label-caps px-8 py-4 tracking-wider transition-all duration-300 rounded-none text-xs w-full sm:w-1/2 text-center">
+            Find Us
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop/Tablet Hero Layout (>= md) - 50/50 Split Screen -->
+    <div id="desktop-hero" class="hidden md:flex h-full w-full">
+
+      <!-- Left Column: Premium Editorial Content Panel (Light neutral background) -->
+      <div class="w-1/2 h-full flex flex-col justify-center px-[64px] bg-background border-r border-outline-variant/30">
+        <div class="max-w-[500px] mt-12">
+          <h1 class="text-on-background font-serif display-lg mb-4 leading-[1.15]">
+            Food that touches your soul.<br>Your door to happiness.
+          </h1>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="font-sans font-bold text-lg text-primary">4.9</span>
+            <div class="flex text-primary text-sm">
+              ★★★★★
+            </div>
+            <span class="text-on-background/60 font-sans text-sm ml-1">(1200+ reviews)</span>
+          </div>
+          <!-- Reviews Slideshow (Desktop) -->
+          <div class="relative overflow-hidden mb-8 h-32 max-w-[500px]">
+            <!-- Slide 1 -->
+            <div
+              class="review-slide-desktop absolute inset-0 flex items-start gap-4 transition-all duration-700 ease-in-out opacity-100 transform translate-x-0">
+              <img src="avatar_john.png" alt="John D."
+                class="w-14 h-14 rounded-full object-cover border border-outline/20 flex-shrink-0">
+              <div class="flex-grow">
+                <p class="text-on-background/85 font-sans text-base lg:text-lg italic leading-relaxed">"The hazelnut
+                  cappuccino was absolutely perfect, and the katsu chicken bao is incredibly flavorful. Truly a gem of a
+                  cafe!"</p>
+                <h4 class="label-caps text-primary text-xs mt-1.5">— John D., Local Guide</h4>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div
+              class="review-slide-desktop absolute inset-0 flex items-start gap-4 transition-all duration-700 ease-in-out opacity-0 transform translate-x-8 pointer-events-none">
+              <img src="avatar_sarah.png" alt="Sarah M."
+                class="w-14 h-14 rounded-full object-cover border border-outline/20 flex-shrink-0">
+              <div class="flex-grow">
+                <p class="text-on-background/85 font-sans text-base lg:text-lg italic leading-relaxed">"Such a cozy and
+                  quaint atmosphere! I love coming here to unwind. Their cream of mushroom soup is the best I've ever
+                  had."</p>
+                <h4 class="label-caps text-primary text-xs mt-1.5">— Sarah M., Customer</h4>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div
+              class="review-slide-desktop absolute inset-0 flex items-start gap-4 transition-all duration-700 ease-in-out opacity-0 transform translate-x-8 pointer-events-none">
+              <img src="avatar_david.png" alt="David K."
+                class="w-14 h-14 rounded-full object-cover border border-outline/20 flex-shrink-0">
+              <div class="flex-grow">
+                <p class="text-on-background/85 font-sans text-base lg:text-lg italic leading-relaxed">"Friendly staff,
+                  excellent service, and the roasted chicken sub is delicious. Highly recommend visiting Ceskaz Deli
+                  Cafe."</p>
+                <h4 class="label-caps text-primary text-xs mt-1.5">— David K., Food Blogger</h4>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#menu"
+              class="bg-primary hover:bg-[#5f4923] text-white label-caps px-8 py-4 tracking-wider transition-all duration-300 rounded-none border border-primary">
+              Explore Menu
+            </a>
+            <a href="#visit"
+              class="border border-primary text-primary hover:bg-primary/10 label-caps px-8 py-4 tracking-wider transition-all duration-300 rounded-none">
+              Find Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Autoplay local video -->
+      <div class="w-1/2 h-full relative bg-black">
+        <video id="desktop-video" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+          <source src="cafe.mp4" type="video/mp4">
+        </video>
+        <!-- Subtle dark overlay to match premium gallery aesthetic -->
+        <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+      </div>
+
+    </div>
+
+    <!-- Floating Sound Control Icon (Bottom Right of the Hero - Sharp square frame) -->
+    <button onclick="toggleMute()"
+      class="fixed bottom-6 right-6 md:absolute md:bottom-8 md:right-8 z-30 bg-background/80 text-primary hover:bg-primary hover:text-white border border-primary p-4 transition-all duration-300 rounded-none flex items-center justify-center shadow-sm backdrop-blur-sm"
+      aria-label="Toggle Sound">
+      <svg class="mute-icon-svg w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <!-- Initial State: Unmuted Speaker Icon -->
+        <path d="M5 17h-5v-10h5v10zm2-10v10l9 5v-20l-9 5zm11 1.79v8.42c1.72-.77 3-2.48 3-4.5s-1.28-3.73-3-4.5z" />
+      </svg>
+    </button>
+
+  </main>
+
+
+  <!-- Gallery Section (Asymmetric Editorial Grid) -->
+  <section id="gallery"
+    class="max-w-[1280px] mx-auto px-5 md:px-[64px] py-[120px] bg-background border-t border-outline-variant/20">
+    <div class="mb-16">
+      <h2 class="font-serif text-4xl md:text-5xl text-on-background leading-tight">We pour our heart into the
+        ingredients, and that's how we create magic.</h2>
+
+    </div>
+
+    <!-- The Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      <!-- Item 1 (Spans 7 columns) -->
+      <div
+        class="md:col-span-7 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[480px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_1.png" alt="Ceskaz Deli Cafe Platter"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 2 (Spans 5 columns) -->
+      <div
+        class="md:col-span-5 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[480px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_2.png" alt="Specialty Pastries"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 3 (Spans 4 columns) -->
+      <div
+        class="md:col-span-4 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[360px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_3.png" alt="Signature Brews"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 4 (Spans 8 columns) -->
+      <div
+        class="md:col-span-8 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[360px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_4.png" alt="Cafe Entrance & Seating"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 5 (Spans 5 columns) -->
+      <div
+        class="md:col-span-5 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[420px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_5.png" alt="Gourmet Breakfast Options"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 6 (Spans 7 columns) -->
+      <div
+        class="md:col-span-7 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[420px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_6.png" alt="Fresh Desserts"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 7 (Spans 4 columns) -->
+      <div
+        class="md:col-span-4 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[360px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_7.png" alt="Specialty Croissants & Bakery"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 8 (Spans 4 columns) -->
+      <div
+        class="md:col-span-4 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[360px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_8.png" alt="Signature Shakes & Drinks"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 9 (Spans 4 columns) -->
+      <div
+        class="md:col-span-4 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[360px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_9.png" alt="Dishes Collection"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 10 (Spans 6 columns) -->
+      <div
+        class="md:col-span-6 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[400px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_10.png" alt="Artisanal Desserts"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Item 11 (Spans 6 columns) -->
+      <div
+        class="md:col-span-6 group relative overflow-hidden bg-surface border border-outline-variant/30 flex flex-col justify-end h-[400px]">
+        <div class="w-full h-full overflow-hidden">
+          <img src="photo/gallery_11.png" alt="Signature Dishes"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="max-w-[1280px] mx-auto px-5 md:px-[64px] py-[120px] bg-background">
+    <div class="mb-16 text-center">
+      <h2 class="font-serif text-4xl md:text-5xl text-on-background leading-tight">Multi Cuisine Comfort Food</h2>
+    </div>
+
+    <!-- Category Tabs Selector -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 border-b border-outline-variant/30 pb-4">
+      <button onclick="switchMenuTab('subs')"
+        class="menu-tab-btn px-4 py-2 label-caps text-xs tracking-wider transition-all duration-300 border-b-2 border-primary text-primary"
+        id="tab-btn-subs">Subs & Rolls</button>
+      <button onclick="switchMenuTab('mains')"
+        class="menu-tab-btn px-4 py-2 label-caps text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-on-background/60 hover:text-on-background"
+        id="tab-btn-mains">Global Plates</button>
+      <button onclick="switchMenuTab('asian')"
+        class="menu-tab-btn px-4 py-2 label-caps text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-on-background/60 hover:text-on-background"
+        id="tab-btn-asian">Asian Craft</button>
+      <button onclick="switchMenuTab('brews')"
+        class="menu-tab-btn px-4 py-2 label-caps text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-on-background/60 hover:text-on-background"
+        id="tab-btn-brews">Brews & Drinks</button>
+      <button onclick="switchMenuTab('desserts')"
+        class="menu-tab-btn px-4 py-2 label-caps text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-on-background/60 hover:text-on-background"
+        id="tab-btn-desserts">Patisserie</button>
+    </div>
+
+    <!-- Menu Grid Container -->
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Tab 1: Subs & Rolls -->
+      <div id="menu-tab-subs" class="menu-tab-content space-y-8">
+
+        <!-- Handwritten Annotation -->
+        <div class="relative h-14 md:h-16 overflow-visible pointer-events-none select-none">
+          <div class="absolute -bottom-1 left-2 md:left-4 flex items-center gap-1">
+            <svg class="w-12 h-12 md:w-16 md:h-16 text-primary/80 transform -rotate-[15deg] translate-y-2"
+              viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <!-- Hand-drawn curve that starts top-right and curls down-left -->
+              <path d="M85,15 C70,10 50,15 40,35 C32,50 35,68 48,72 C58,75 65,68 62,55 C58,42 42,45 30,58 L12,75" />
+              <!-- Arrowhead pointing down-left -->
+              <path d="M22,75 L12,75 L12,65" />
+            </svg>
+            <div class="flex flex-col rotate-[-4deg] tracking-wide mt-1">
+              <span class="font-handwritten text-2xl md:text-3xl text-primary font-semibold leading-tight">
+                Here will be the actual images
+              </span>
+              <span class="font-handwritten text-lg md:text-xl text-primary/70 font-medium leading-none">
+                (I do not have those images right now)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Tuna Melt Grilled Sandwich</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Flaked tuna mixed with celery, house
+              mayo, and melted sharp cheddar on sourdough.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹240</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Butter Chicken Sub Roll</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Creamy, mildly-spiced butter chicken
+              stuffed inside a freshly baked crusty sub roll.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹160</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Roasted Chicken Sub Roll</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Tender roasted chicken breast slices
+              layered with ripe tomatoes, crisp lettuce, and black olives.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹170</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Paneer Tikka Roll</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Marinated paneer cubes grilled to
+              perfection, wrapped in a soft flatbread with mint chutney.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹150</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Chicken Cafreal Sandwich</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Goan-style cafreal spiced grilled
+              chicken, fresh onions, and green chutney in toasted bread.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹180</span>
+        </div>
+      </div>
+
+      <!-- Tab 2: Global Plates -->
+      <div id="menu-tab-mains" class="menu-tab-content hidden space-y-8">
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Mutton Adana Kebab Platter</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Charcoal-grilled minced lamb kebabs,
+              served with grilled tomatoes, flatbread, and fresh toum (garlic aioli).</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹480</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Hummus with Roast Chicken</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Smooth, house-made chickpeas and tahini
+              spread topped with olive oil, paprika, and roast chicken slices.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹320</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Thai Beef Waterfall Salad</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Tender sliced beef tossed with French
+              beans, fresh herbs, and tomato chunks in a spicy, tangy lime-chili dressing.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹380</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Fattoush Salad</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Crisp romaine, garden vegetables, sumac,
+              and extra virgin olive oil, topped with crunchy toasted pita croutons.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹220</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Bacon Wrapped Sausage (6 pcs)
+            </h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Juicy pork sausages wrapped in crispy
+              smoked bacon strips, grilled until golden brown.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹250</span>
+        </div>
+      </div>
+
+      <!-- Tab 3: Asian Craft -->
+      <div id="menu-tab-asian" class="menu-tab-content hidden space-y-8">
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Katsu Chicken Bao</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Crispy panko-breaded chicken katsu,
+              pickled cucumbers, and tonkatsu sauce folded inside a soft steamed bao.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹280</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Crispy Chilli Honey Prawns</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Wok-tossed prawns coated in a sticky
+              honey-chili glaze, sprinkled with toasted sesame seeds and scallions.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹420</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Pork Thai Basil (Pad Kra Prow)
+            </h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Minced pork stir-fried with fragrant holy
+              basil, garlic, and fresh chilies, served with a jasmine rice bowl.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹400</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Fish Japanese Panko Fried</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Flaky white fish fillet crumbed in panko,
+              deep fried till golden, served with house-made tartar sauce.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹450</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Spicy Burnt Garlic Fried Rice
+            </h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Fragrant jasmine rice wok-tossed with
+              golden burnt garlic, seasonal vegetables, and light soy.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹220</span>
+        </div>
+      </div>
+
+      <!-- Tab 4: Brews & Drinks -->
+      <div id="menu-tab-brews" class="menu-tab-content hidden space-y-8">
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Caramel Cappuccino</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Espresso with steamed milk, fluffy froth,
+              and a rich caramel drizzle.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹160</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Hazelnut Latte</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Rich espresso and steamed milk flavored
+              with sweet hazelnut syrup.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹170</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Orange Caprioska</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">A refreshing mocktail of muddled fresh
+              oranges, mint leaves, lime wedges, and sparkling soda.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹150</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Classic Iced Coffee</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Chilled espresso blended with cold milk,
+              sweet cream, and ice.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹140</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Espresso Single Shot</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">A bold and rich shot of our house blend
+              espresso.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹90</span>
+        </div>
+      </div>
+
+      <!-- Tab 5: Patisserie -->
+      <div id="menu-tab-desserts" class="menu-tab-content hidden space-y-8">
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">New York Cheesecake</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Classic rich and velvety baked cheesecake
+              on a buttery graham cracker crust.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹220</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Choux Au Craquelin</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Light choux pastry puffs topped with a
+              sweet crispy craquelin crust, filled with vanilla bean pastry cream.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹160</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Chocolate Eclair</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Classic choux pastry tube filled with
+              chocolate custard, glazed with rich dark chocolate ganache.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹150</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Lemon Meringue Pie</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Tangy, smooth lemon curd in a buttery
+              pastry shell, topped with toasted fluffy meringue.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹180</span>
+        </div>
+
+        <div class="flex items-start gap-4 border-b border-outline-variant/20 pb-4">
+          <!-- Image Placeholder -->
+          <div
+            class="w-16 h-16 md:w-20 md:h-20 bg-surface-container border border-outline-variant/30 flex-shrink-0 flex items-center justify-center text-on-background/30">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+            </svg>
+          </div>
+          <div class="flex-grow pr-4">
+            <h3 class="font-sans font-semibold text-on-background text-base md:text-lg">Profiteroles</h3>
+            <p class="font-sans text-on-background/60 text-xs md:text-sm mt-1">Classic French choux pastry filled with
+              sweet whipped cream and drizzled with hot chocolate sauce.</p>
+          </div>
+          <span class="font-serif text-primary text-base md:text-lg font-medium flex-shrink-0">₹160</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit & Contact Section -->
+  <section id="visit"
+    class="max-w-[1280px] mx-auto px-5 md:px-[64px] py-[120px] bg-background border-t border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Contact Column (Spans 5 cols) -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div>
+          <span class="label-caps text-primary tracking-[0.2em] mb-3 block">Visit Us</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-on-background leading-tight mb-8">Where to Find Us</h2>
+
+          <div class="space-y-8">
+            <!-- Address -->
+            <div>
+              <h4 class="label-caps text-primary text-xs mb-2">Location</h4>
+              <p class="font-sans text-on-background/80 text-base leading-relaxed">
+                No. 1, Roma Apartments,<br>
+                Near Ana Fonte Garden, Pajifond,<br>
+                Margao, Goa — 403601
+              </p>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <h4 class="label-caps text-primary text-xs mb-2">Phone</h4>
+              <p class="font-sans text-on-background/85 text-base">
+                <a href="tel:09175827044" class="hover:text-primary transition-colors duration-200 font-medium">091758
+                  27044</a>
+              </p>
+            </div>
+
+            <!-- Instagram -->
+            <div>
+              <h4 class="label-caps text-primary text-xs mb-2">Instagram</h4>
+              <p class="font-sans text-on-background/85 text-base">
+                <a href="https://www.instagram.com/ceskaz_delicafe/" target="_blank" rel="noopener noreferrer"
+                  class="hover:text-primary transition-colors duration-200 flex items-center gap-1.5 font-medium">
+                  @ceskaz_delicafe
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directions CTA Button -->
+        <div class="mt-16 lg:mt-24">
+          <a href="https://maps.app.goo.gl/QyfTmZHpKmcQFL7fA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary hover:bg-[#5f4923] text-white label-caps px-8 py-4 tracking-wider transition-all duration-300 rounded-none border border-primary w-full sm:w-auto text-center">
+            Get Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Map Column (Spans 7 cols) -->
+      <div class="lg:col-span-7 h-[450px] lg:h-auto border border-outline-variant/30 bg-surface p-1">
+        <iframe
+          src="https://maps.google.com/maps?q=Ceskaz%20Deli%20Cafe,%20Margao,%20Goa&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full border-0 rounded-none" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Developer Pitch Footer Section -->
+  <section id="developer-pitch"
+    class="max-w-[1280px] mx-auto px-5 md:px-[64px] py-[80px] bg-background border-t border-outline-variant/30 text-center">
+    <div class="max-w-xl mx-auto flex flex-col items-center">
+      <!-- Waving Anime Boy Animation -->
+      <svg class="w-24 h-24 text-primary my-2 select-none pointer-events-none animate-shy-face" viewBox="0 0 100 100"
+        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Clean Face Outline -->
+        <path d="M 28 38 C 28 65, 33 80, 50 84 C 67 80, 72 65, 72 38" stroke-width="2" />
+
+        <!-- Clean Spiky Hair (Single Closed Path - Boy Style) -->
+        <path
+          d="M 24 38 C 21 28, 28 15, 38 18 C 44 11, 56 11, 62 18 C 72 15, 79 28, 76 38 C 72 45, 68 40, 64 32 C 60 44, 55 44, 51 32 C 47 44, 42 44, 38 32 C 34 40, 30 45, 24 38 Z"
+          fill="currentColor" class="fill-primary/15" stroke-width="2.5" />
+
+        <!-- Clean Slanted Eyebrows (Worried/Shy Happy) -->
+        <path d="M 32 35 C 36 32, 42 34, 44 38" stroke-width="2.5" />
+        <path d="M 68 35 C 64 32, 58 34, 56 38" stroke-width="2.5" />
+
+        <!-- Eyes (Happy curved anime style: ^ ^) -->
+        <path d="M 33 50 C 36 46, 42 46, 45 50" stroke-width="3.5" />
+        <path d="M 55 50 C 58 46, 64 46, 67 50" stroke-width="3.5" />
+
+        <!-- Shy Smile Mouth -->
+        <path d="M 46 66 Q 50 71 54 66" stroke-width="2.5" />
+
+        <!-- Soft Cheek Blush -->
+        <ellipse cx="32" cy="62" rx="4" ry="2" fill="currentColor" class="fill-primary/20" stroke="none" />
+        <ellipse cx="68" cy="62" rx="4" ry="2" fill="currentColor" class="fill-primary/20" stroke="none" />
+
+        <!-- Shy Gesture: Left Arm & Hand (👉) -->
+        <g class="animate-shy-left" style="transform-origin: 28px 82px;">
+          <!-- Sleeve -->
+          <path d="M 28 82 C 32 78, 38 76, 42 76" stroke-width="7" class="stroke-primary/20" />
+          <path d="M 28 82 C 32 78, 38 76, 42 76" stroke-width="2.5" />
+          <!-- Hand & Fist -->
+          <circle cx="42" cy="78" r="3" fill="currentColor" />
+          <!-- Index Finger pointing right -->
+          <path d="M 43 76 L 48 76" stroke-width="2.5" />
+        </g>
+
+        <!-- Shy Gesture: Right Arm & Hand (👈) -->
+        <g class="animate-shy-right" style="transform-origin: 72px 82px;">
+          <!-- Sleeve -->
+          <path d="M 72 82 C 68 78, 62 76, 58 76" stroke-width="7" class="stroke-primary/20" />
+          <path d="M 72 82 C 68 78, 62 76, 58 76" stroke-width="2.5" />
+          <!-- Hand & Fist -->
+          <circle cx="58" cy="78" r="3" fill="currentColor" />
+          <!-- Index Finger pointing left -->
+          <path d="M 57 76 L 52 76" stroke-width="2.5" />
+        </g>
+
+        <!-- Sweat Drop (Dripping animation) -->
+        <path d="M 75 22 C 75 22, 80 27, 80 32 C 80 36, 76 38, 74 35 C 72 32, 75 22, 75 22 Z" fill="currentColor"
+          class="fill-primary/30 animate-sweat" stroke-width="2" />
+      </svg>
+
+      <!-- Pitch Message -->
+      <h1 class="font-handwritten text-2xl text-primary max-w-lg mx-auto leading-relaxed mb-8 rotate-[-1deg]">
+        "So, can I have a 10-minute appointment with you? I want to explain what I can do for you."
+      </h1>
+
+      <!-- Call to Action -->
+      <a href="https://wa.me/917908707926?text=Hi!%20I%20would%20love%20to%20schedule%20a%2010-minute%20appointment%20with%20you."
+        target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-primary hover:bg-[#5f4923] text-white label-caps px-10 py-4 tracking-wider transition-all duration-300 rounded-none border border-primary w-full sm:w-auto text-center text-sm">
+        Let's Work Together
+      </a>
+    </div>
+  </section>
+
+  <!-- Demo Booking Alert Modal -->
+  <div id="booking-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-500">
+    <div
+      class="bg-background border border-primary max-w-md w-full p-8 mx-4 text-center shadow-lg transform scale-95 transition-all duration-500 relative"
+      id="booking-modal-content">
+      <!-- Decorative Masking Tape Style -->
+      <div
+        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d0c5b6]/60 px-6 py-2 rotate-[2deg] shadow-sm text-xs label-caps border border-outline/10 text-on-primary-container font-medium select-none pointer-events-none">
+        Demo Note
+      </div>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <h3 class="font-handwritten text-4xl text-primary mb-1 rotate-[-1deg] font-bold">Book a Table</h3>
+
+        <!-- Cute embarrassed anime face -->
+        <svg class="w-24 h-24 text-primary my-2 select-none pointer-events-none animate-shy-face" viewBox="0 0 100 100"
+          fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Clean Head/Face Outline -->
+          <path d="M 28 38 C 28 65, 33 80, 50 84 C 67 80, 72 65, 72 38" stroke-width="2" />
+
+          <!-- Clean Spiky Hair (Single Closed Path - Boy Style) -->
+          <path
+            d="M 24 38 C 21 28, 28 15, 38 18 C 44 11, 56 11, 62 18 C 72 15, 79 28, 76 38 C 72 45, 68 40, 64 32 C 60 44, 55 44, 51 32 C 47 44, 42 44, 38 32 C 34 40, 30 45, 24 38 Z"
+            fill="currentColor" class="fill-primary/15" stroke-width="2.5" />
+
+          <!-- Clean Slanted Eyebrows (Worried) -->
+          <path d="M 32 35 C 36 32, 42 34, 44 38" stroke-width="2.5" />
+          <path d="M 68 35 C 64 32, 58 34, 56 38" stroke-width="2.5" />
+
+          <!-- Clean Anime Eyes -->
+          <path d="M 33 46 C 37 42, 43 42, 47 46" stroke-width="3" />
+          <path d="M 53 46 C 57 42, 63 42, 67 46" stroke-width="3" />
+
+          <!-- Clean Pupils with single bright highlight -->
+          <ellipse cx="40" cy="53" rx="4" ry="6" fill="currentColor" stroke="none" />
+          <circle cx="38.5" cy="50.5" r="1.2" fill="white" stroke="none" />
+
+          <ellipse cx="60" cy="53" rx="4" ry="6" fill="currentColor" stroke="none" />
+          <circle cx="58.5" cy="50.5" r="1.2" fill="white" stroke="none" />
+
+          <!-- Modern Clean Blush (Soft solid ellipses instead of scratchy lines) -->
+          <ellipse cx="32" cy="64" rx="5" ry="2.5" fill="currentColor" class="fill-primary/20" stroke="none" />
+          <ellipse cx="68" cy="64" rx="5" ry="2.5" fill="currentColor" class="fill-primary/20" stroke="none" />
+
+          <!-- Clean Shy Mouth -->
+          <path d="M 45 68 Q 50 63 55 68" stroke-width="2.5" />
+
+          <!-- Clean Sweat Drop (Animated) -->
+          <path d="M 75 22 C 75 22, 80 27, 80 32 C 80 36, 76 38, 74 35 C 72 32, 75 22, 75 22 Z" fill="currentColor"
+            class="fill-primary/30 animate-sweat" stroke-width="2" />
+        </svg>
+
+        <p class="font-handwritten text-2xl text-on-background/90 mb-8 max-w-sm mx-auto leading-relaxed rotate-[1deg]">
+          "This is a demo, I was feeling lazy, I did not develop it yet. In production, this will work for sure!"
+        </p>
+      </div>
+      <button onclick="closeBookingModal()"
+        class="bg-primary hover:bg-[#5f4923] text-white label-caps px-8 py-3.5 tracking-wider transition-all duration-300 rounded-none w-full border border-primary text-xs relative z-10">
+        Understood
+      </button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript to manage audio playback, responsiveness & animations -->
+  <script>
+    const enterBtn = document.getElementById('enter-btn');
+    const splashOverlay = document.getElementById('splash-overlay');
+    const bodyContainer = document.getElementById('body-container');
+
+    // Video elements
+    const mobileVideo = document.getElementById('mobile-video');
+    const desktopVideo = document.getElementById('desktop-video');
+
+    // State of experience initialization
+    let experienceStarted = false;
+    let isMuted = false;
+
+    // Detect screen layout
+    function isMobileLayout() {
+      return window.innerWidth < 768;
+    }
+
+    // Play right video elements based on current size
+    function syncVideoPlayback() {
+      if (isMobileLayout()) {
+        // Play mobile, pause desktop
+        mobileVideo.muted = experienceStarted ? isMuted : true;
+        mobileVideo.play().catch(e => console.log("Mobile play blocked", e));
+
+        desktopVideo.pause();
+      } else {
+        // Play desktop video
+        desktopVideo.muted = experienceStarted ? isMuted : true;
+        desktopVideo.play().catch(e => console.log("Desktop play blocked", e));
+
+        mobileVideo.pause();
+      }
+    }
+
+    // Unmute or Mute audio across all active audio videos
+    function toggleMute() {
+      isMuted = !isMuted;
+      updateMuteState();
+    }
+
+    // Direct UI/Media update for muted state
+    function updateMuteState() {
+      mobileVideo.muted = isMuted;
+      desktopVideo.muted = isMuted;
+
+      const muteIconSvgs = document.querySelectorAll('.mute-icon-svg');
+
+      muteIconSvgs.forEach(svg => {
+        if (isMuted) {
+          // SVG path for Muted speaker
+          svg.innerHTML = `<path d="M3.27 3L2 4.27l5 5V17h-5v-10h5v2.73l4.27 4.27L16 19v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.03c1.38-.31 2.63-.95 3.69-1.81L22.73 21 24 19.73 3.27 3zM16 5v5.27l5 5v-5.27c0-2.02-1.28-3.73-3-4.5v2.03c.83.25 1.58.66 2.25 1.18L16 5.27z"/>`;
+        } else {
+          // SVG path for Loud speaker
+          svg.innerHTML = `<path d="M5 17h-5v-10h5v10zm2-10v10l9 5v-20l-9 5zm11 1.79v8.42c1.72-.77 3-2.48 3-4.5s-1.28-3.73-3-4.5z"/>`;
+        }
+      });
+    }
+
+    // Set loop and mute on video complete (triggers only on the first playthrough)
+    function handleVideoEnd(videoElement) {
+      isMuted = true;
+      updateMuteState();
+
+      videoElement.muted = true;
+      videoElement.loop = true; // Turn native loop on so it continues looping muted programmatically
+      videoElement.play().catch(e => console.log("Loop play blocked", e));
+    }
+
+    // Attach first-play listeners
+    mobileVideo.addEventListener('ended', () => handleVideoEnd(mobileVideo));
+    desktopVideo.addEventListener('ended', () => handleVideoEnd(desktopVideo));
+
+    // Handle entering the experience
+    enterBtn.addEventListener('click', () => {
+      experienceStarted = true;
+
+      // Remove overflow hidden to allow future scrolling if needed
+      bodyContainer.classList.remove('overflow-hidden');
+
+      // Fade out splash page
+      splashOverlay.classList.add('fade-out');
+
+      // Remove splash from DOM after fade finishes
+      setTimeout(() => {
+        splashOverlay.remove();
+      }, 1000);
+
+      // Unmute and start unmuted playback from 0:00
+      isMuted = false;
+      updateMuteState();
+
+      const activeVideo = isMobileLayout() ? mobileVideo : desktopVideo;
+      activeVideo.currentTime = 0;
+      activeVideo.play().catch(e => console.log("Play failed", e));
+    });
+
+    // Start background video playback (muted) immediately on load to animate the glass
+    syncVideoPlayback();
+
+    // Sync on resize events
+    window.addEventListener('resize', () => {
+      syncVideoPlayback();
+    });
+
+    // Glassmorphism scroll effect for navigation
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-nav');
+      const logo = document.getElementById('nav-logo');
+      const links = header.querySelectorAll('nav a');
+
+      if (window.scrollY > 50) {
+        // Frosted Glass Effect
+        header.classList.remove('border-transparent');
+        header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'border-outline-variant/30');
+
+        // Ensure all navbar elements are dark charcoal on scroll
+        logo.classList.add('text-on-background');
+        logo.classList.remove('text-white');
+        links.forEach(link => {
+          link.classList.add('text-on-background/80', 'hover:text-on-background');
+        });
+      } else {
+        // Transparent default style
+        header.classList.add('border-transparent');
+        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'border-outline-variant/30');
+
+        // Reset to original split header state
+        if (!isMobileLayout()) {
+          logo.classList.add('text-on-background');
+          logo.classList.remove('text-white');
+          links.forEach(link => {
+            link.classList.add('text-on-background/80', 'hover:text-on-background');
+          });
+        } else {
+          // On mobile, transparent header starts with white text since it is on black video overlay
+          logo.classList.add('text-white');
+          logo.classList.remove('text-on-background');
+        }
+      }
+    });
+    // Customer Reviews Slideshow Logic
+    function initReviewsSlideshow() {
+      const desktopSlides = document.querySelectorAll('.review-slide-desktop');
+      const mobileSlides = document.querySelectorAll('.review-slide-mobile');
+      let currentIdx = 0;
+
+      function showSlide(slides, index) {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.remove('opacity-0', 'translate-x-8', 'pointer-events-none');
+            slide.classList.add('opacity-100', 'translate-x-0');
+          } else {
+            slide.classList.remove('opacity-100', 'translate-x-0');
+            slide.classList.add('opacity-0', 'translate-x-8', 'pointer-events-none');
+          }
+        });
+      }
+
+      setInterval(() => {
+        currentIdx = (currentIdx + 1) % 3; // 3 slides total
+        if (desktopSlides.length > 0) showSlide(desktopSlides, currentIdx);
+        if (mobileSlides.length > 0) showSlide(mobileSlides, currentIdx);
+      }, 4000); // changes every 4 seconds
+    }
+
+    // Menu Tabs Switching Logic
+    function switchMenuTab(tabId) {
+      // Hide all menu tab contents
+      const contents = document.querySelectorAll('.menu-tab-content');
+      contents.forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      // Remove active styles from all tab buttons
+      const buttons = document.querySelectorAll('.menu-tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('border-primary', 'text-primary');
+        btn.classList.add('border-transparent', 'text-on-background/60');
+      });
+
+      // Show the active tab content
+      const activeContent = document.getElementById(`menu-tab-${tabId}`);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+
+      // Add active styles to clicked button
+      const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-on-background/60');
+        activeBtn.classList.add('border-primary', 'text-primary');
+      }
+    }
+
+    // Modal Controls for Booking Button
+    const bookingModal = document.getElementById('booking-modal');
+    const bookingModalContent = document.getElementById('booking-modal-content');
+
+    function openBookingModal(e) {
+      if (e) e.preventDefault();
+      bookingModal.classList.remove('opacity-0', 'pointer-events-none');
+      bookingModal.classList.add('opacity-100');
+      bookingModalContent.classList.remove('scale-95');
+      bookingModalContent.classList.add('scale-100');
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.remove('opacity-100');
+      bookingModal.classList.add('opacity-0', 'pointer-events-none');
+      bookingModalContent.classList.remove('scale-100');
+      bookingModalContent.classList.add('scale-95');
+    }
+
+    // Attach click listener to Book a Table button
+    const bookBtn = document.getElementById('nav-action');
+    if (bookBtn) {
+      bookBtn.addEventListener('click', openBookingModal);
+    }
+
+    // Initialize on load
+    initReviewsSlideshow();
+  </script>
+</body>
+
+</html>
